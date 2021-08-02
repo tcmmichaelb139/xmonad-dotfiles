@@ -1,0 +1,3 @@
+#!/bin/bash
+
+pulseaudio-ctl full-status | awk '{ printf "%i%\n", $1 }'
