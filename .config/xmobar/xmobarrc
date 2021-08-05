@@ -18,7 +18,7 @@ Config { font = "xft:SauceCodePro Nerd Font:weight=bold:pixelsize=11:antialias=t
                     , Run Cpu ["-t", "<fn=1>\xf2db</fn>  cpu: (<total>%)","-H","50","--high","red"] 20
                     , Run Memory ["-t", "<fn=1>\xf538</fn>  mem: <used>M (<usedratio>%)"] 20
                     , Run DiskU [("/", "\xf0c7  hdd: <free> free")] [] 60
-                    , Run Com "/home/tcmb139/.xmonad/scripts/volume" [] "vol" 1
+                    , Run Com "/home/tcmb139/.xmonad/scripts/volume" [] "vol" 30
                     , Run Com "/home/tcmb139/.xmonad/scripts/batinfo" [] "bat" 20
                     , Run Com "/home/tcmb139/.xmonad/scripts/pacupdate" [] "pacupdate" 36000
                     , Run Com "uname" ["-r"] "" 3600

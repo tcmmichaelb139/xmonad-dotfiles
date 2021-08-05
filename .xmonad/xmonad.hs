@@ -96,7 +96,6 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 myStartupHook :: X ()
 myStartupHook = do
     spawnOnce "picom &"
-    spawnOnce "nm-applet &"
     spawnOnce "volumeicon &"
     spawnOnce "nitrogen --restore &"
     spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
