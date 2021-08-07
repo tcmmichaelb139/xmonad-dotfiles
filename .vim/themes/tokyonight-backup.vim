@@ -1,3 +1,7 @@
+"""""""""""""""""""""""""
+" Theme based on https://github.com/folke/tokyonight.nvim
+" Created because it doessn't work on vim
+"""""""""""""""""""""""""
 set background=dark
 
 let s:red       = { "gui": "#f7768e" }
@@ -48,7 +52,7 @@ call s:h("Exception", { "fg": s:magenta }) " try, catch, throw
 call s:h("PreProc", { "fg": s:blue }) " generic Preprocessor
 call s:h("Include", { "fg": s:cyan0 }) " preprocessor #include
 call s:h("Define", { "fg": s:cyan2 }) " preprocessor #define
-call s:h("Macro", { "fg": s:cyan1 }) " same as Define
+call s:h("Macro", { "fg": s:magenta }) " same as Define
 call s:h("PreCondit", { "fg": s:blue }) " preprocessor #if, #else, #endif, etc.
 call s:h("Type", { "fg": s:magenta }) " int, long, char, etc.
 call s:h("StorageClass", { "fg": s:magenta }) " static, register, volatile, etc.

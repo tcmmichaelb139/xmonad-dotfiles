@@ -8,6 +8,7 @@ Plug 'nvim-lua/completion-nvim'
 
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-commentary'                             "better commenting
+Plug 'tpope/vim-surround'
 
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
@@ -35,7 +36,7 @@ set termguicolors                                                   " opaque bac
 set number                                                          " enables numbers to the left
 set relativenumber                                                  " sets lines above and below to amount away from current line
 set nohlsearch incsearch smartcase                                  " highlight text which searching
-set clipboard+=unnamedplus                                          " use system clipboard by default
+set clipboard-=unnamedplus                                          " use system clipboard by default
 set hidden
 set tabstop=4 softtabstop=4 shiftwidth=4 autoindent                 " tabs indents
 set expandtab
@@ -77,8 +78,8 @@ colorscheme tokyonight
 
 let mapleader = " "
 
-autocmd BufNewFile,BufRead *.txt *.md set wrap spell
-autocmd BufNewFile,BufRead *.md set colorcolumn=80
+autocmd BufNewFile,BufRead *.txt set wrap spell
+autocmd BufNewFile,BufRead *.md set colorcolumn=80 spell
 
 inoremap {<CR> {<CR>}<Esc>O
 inoremap {} {}
