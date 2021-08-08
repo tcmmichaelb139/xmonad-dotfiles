@@ -57,7 +57,7 @@ Config { font = "xft:SauceCodePro Nerd Font:weight=bold:pixelsize=11:antialias=t
                       \<fc=#2ac3de,#1a1b26> %bat%  </fc>\
                       \<fc=#9ece6a,#1a1b26>  %pacupdate% </fc>\
                       \<fc=#ff9e64,#1a1b26><action='pavucontrol'>  %vol% </action></fc>\
-                      \<fc=#f7768e,#1a1b26> %date% </fc> "
+                      \<fc=#f7768e,#1a1b26> %date% </fc>"
        }
 
 
