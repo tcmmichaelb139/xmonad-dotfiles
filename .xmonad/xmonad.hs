@@ -85,10 +85,10 @@ myBorderWidth :: Dimension
 myBorderWidth = 3           -- Sets border width for windows
 
 myNormColor :: String
-myNormColor   = "#565f89"   -- Border color of normal windows
+myNormColor   = "#0f4b6e"   -- Border color of normal windows
 
 myFocusColor :: String
-myFocusColor  = "#c0caf5"   -- Border color of focused windows
+myFocusColor  = "#2ac3de"   -- Border color of focused windows
 
 windowCount :: X (Maybe String)
 windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace . W.current . windowset
@@ -371,4 +371,5 @@ main = do
               , ppOrder  = \(ws:l:t:ex) -> [ws,l]++ex++[t]                    -- order of things in xmobar
               }
         } `additionalKeysP` myKeys 
+
 
