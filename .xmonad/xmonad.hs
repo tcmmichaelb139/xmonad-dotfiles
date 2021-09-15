@@ -96,10 +96,12 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 myStartupHook :: X ()
 myStartupHook = do
     spawnOnce "picom &"
-    spawnOnce "pulseaudio --daemonize"
+    spawnOnce "pulseaudio --daemonize &"
     spawnOnce "nitrogen --restore &"
     spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-    spawnOnce "xfce4-power-manager"
+    spawnOnce "xfce4-power-manager &"
+    spawnOnce "fcitx -d &"
+    spawnOnce "libinput-gestures-setup start"
 
 spawnSelected' :: [(String, String)] -> X ()
 spawnSelected' lst = gridselect conf lst >>= flip whenJust spawn
@@ -249,6 +251,7 @@ myManageHook = composeAll
      , className =? "toolbar"         --> doFloat
      , className =? "Xournalpp"       --> doShift ( myWorkspaces !! 3 )
      , className =? "Zathura"         --> doShift ( myWorkspaces !! 4 )
+     , className =? "Vmplayer"        --> doShift ( myWorkspaces !! 5 )
      , className =? "discord"         --> doShift ( myWorkspaces !! 6 )
      , className =? "vlc"             --> doShift ( myWorkspaces !! 7 )
      , className =? "Deadbeef"        --> doShift ( myWorkspaces !! 7 )
@@ -290,6 +293,10 @@ myKeys =
         , ("M1-S-j", windows W.swapDown)   -- Swap focused window with next window
         , ("M1-S-k", windows W.swapUp)     -- Swap focused window with prev window
         , ("M1-<Backspace>", promote)      -- Moves focused window to master, others maintain order
+
+    -- Workspaces
+        , ("M-<Tab>", moveTo Next NonEmptyWS)
+        , ("M-S-<Tab>", moveTo Prev NonEmptyWS)
 
     -- Layouts
         , ("M1-;", sendMessage NextLayout)           -- Switch to next layout
@@ -373,5 +380,4 @@ main = do
               , ppOrder  = \(ws:l:t:ex) -> [ws,l]++ex++[t]                    -- order of things in xmobar
               }
         } `additionalKeysP` myKeys 
-
 
